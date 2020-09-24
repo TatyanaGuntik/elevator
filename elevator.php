@@ -15,6 +15,14 @@ class elevator
         $this->floor = $human->getStartFloor();
     }
 
+//    public function callElevator(human $human)
+//    {
+//        if(!empty($this->passengers)) {
+//            $this->pushTheButton($human);
+//        }
+//        $this->floor = $human->getStartFloor();
+//    }
+
     private function getDirection(human $human)
     {
         return $human->getStartFloor() < $human->getFinishFloor();
