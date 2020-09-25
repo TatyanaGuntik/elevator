@@ -10,18 +10,36 @@ class elevator
 
     protected $passengersInLine = [];
 
-    public function callElevator(human $human)
-    {
-        $this->floor = $human->getStartFloor();
-    }
-
 //    public function callElevator(human $human)
 //    {
-//        if(!empty($this->passengers)) {
-//            $this->pushTheButton($human);
-//        }
 //        $this->floor = $human->getStartFloor();
 //    }
+
+    public function callElevator(human $human)
+    {
+        if(empty($this->passengers)) {
+            $this->floor = $human->getStartFloor();
+        } else {
+
+            $allFinishFloors = [];
+
+            foreach ($this->passengers as $key=> $passInElevator) {
+                $allFinishFloors[] = $passInElevator->getFinishFloor();
+            }
+
+            if (!in_array($human->getFinishFloor(), $allFinishFloors)) {
+                $this->passengers[] = $human;
+            }
+            if (!in_array($human->getStartFloor(), $allFinishFloors)) {
+
+                $human->setFinishFloor($human->getStartFloor());
+                $human->setStartFloor($this->floor);
+                $this->passengers[] = $human;
+
+                print_r($this->passengers) . "<br>";
+            }
+        }
+    }
 
     private function getDirection(human $human)
     {

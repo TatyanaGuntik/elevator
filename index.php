@@ -21,22 +21,22 @@ $newElevator->pushTheButton($threeWoman);
 $newElevator->run();
 
 //-----
-//echo "<hr>";
-//$newElevator = new elevator();
-//
-//$secondMan = new human(1, 5);
-//$firstWoman = new human(1, 8);
-//$secondWoman = new human(1, 3);
-//$thirdWoman = new human(1, 9);
-//
-//$newElevator->callElevator($secondMan);
-//
-//$newElevator->pushTheButton($secondMan);
-//$newElevator->pushTheButton($firstWoman);
-//$newElevator->pushTheButton($secondWoman);
-//$newElevator->pushTheButton($thirdWoman);
-//
-//$newElevator->run();
+echo "<hr>";
+$newElevator = new elevator();
+
+$secondMan = new human(1, 5);
+$firstWoman = new human(1, 8);
+$secondWoman = new human(1, 3);
+$thirdWoman = new human(1, 9);
+
+$newElevator->callElevator($secondMan);
+
+$newElevator->pushTheButton($secondMan);
+$newElevator->pushTheButton($firstWoman);
+$newElevator->pushTheButton($secondWoman);
+$newElevator->pushTheButton($thirdWoman);
+
+$newElevator->run();
 
 
 //-----
@@ -48,7 +48,7 @@ $firstWoman = new human(1, 8);
 $secondWoman = new human(1, 3);
 $thirdWoman = new human(1, 9);
 
-$manOnAnotherFloor = new human(2, 9);
+$manOnAnotherFloor = new human(2, 7);
 
 $newElevator->callElevator($secondMan);
 
